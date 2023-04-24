@@ -1,9 +1,9 @@
 const {Router}=require('express')
 const { IPModel } = require('../models/ip.model')
 
-const IPRouter=Router()
+const ipRouter=Router()
 
-IPRouter.post('/addip',async(req,res)=>{
+ipRouter.post('/addip',async(req,res)=>{
 
     const ip=req.body.ip
     let isExist=await IPModel.findOne({ip})
@@ -27,4 +27,4 @@ IPRouter.post('/addip',async(req,res)=>{
 })
 
 
-module.exports={IPRouter}
+module.exports={ipRouter}
