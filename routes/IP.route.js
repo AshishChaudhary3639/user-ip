@@ -1,5 +1,5 @@
 const {Router}=require('express')
-const { IPModel } = require('../models/IP.model')
+const { IPModel } = require('../models/ip.model')
 
 const IPRouter=Router()
 
@@ -11,7 +11,6 @@ IPRouter.post('/addip',async(req,res)=>{
         res.send({'err':"User ip already exist"})
     }
     else{
-        console.log("ips",req.body)
         if(ip!==null){
             try {
                 let userIP=new IPModel({ip:ip})
